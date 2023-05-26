@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h1>BlogUpdate</h1>
+
+<form  method="post" class="table-bordered" >
+
+    <label>BlogId</label>
+    <input type="number" name="BlogID" />
+    <br />
+    <label>CategoryId</label>
+    <select asp-for="CategoryID" asp-items="@ViewBag.cv" class="absolute-center"></select>
+    <label>BlogTitle</label>
+    <input type="text" name="BlogTitle" />
+    <br />
+    <label>BlogContent</label>
+    <input type="text" name="BlogContent" />
+    <br />
+    <label>BlogImage</label>
+    <input type="text" name="BlogImage"  />
+
+
+
+    <button type="submit" class="alert-danger">Güncelle</button>
+</form>
+
+    
+

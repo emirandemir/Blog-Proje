@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h1>AddBlog</h1>
+
+<form asp-controller="Blog" asp-action="AddBlog" method="post" class="form form-check-input">
+
+
+    <label class="text-black-50">Blog Başlığı</label>
+    <input type="text" name="BlogTitle" class="absolute-center"/>
+    <br />
+    <label class="text-capitalize">Blog Görseli</label>
+    <input type="text" name="BlogImage" class="absolute-center"/>
+    <br />
+    <label class="text-avatar">Kategori</label>
+    <select asp-for="CategoryID" asp-items="@ViewBag.cv" class="absolute-center"></select>
+    <br />
+    <label class="text-dark">Blog İçeriği</label>
+    <textarea asp-for="BlogContent" class="absolute-center"></textarea>    
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+
+</form>
